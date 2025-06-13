@@ -32,12 +32,38 @@ app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   const user = await User.findOne({ username, password });
 
+
   if (user) {
     res.json({ success: true, message: 'Login successful' });
   } else {
     res.status(401).json({ success: false, message: 'Invalid credentials' });
   }
 });
+
+//Register
+
+app.post('/register', async (req, res) => {
+  const { username, password } = req.body;
+
+  if (!username || !password) return res.json({ success: false, message: "Missing fields" });
+
+  try {
+    const existingUser = await User.findOne({ username });
+
+    if (existingUser) {
+      return res.json({ success: false, message: "Username already exists" });
+    }
+
+    const newUser = new User({ username, password });
+    await newUser.save();
+
+    res.json({ success: true, message: "User registered successfully" });
+  } catch (error) {
+    console.error(error);
+    res.json({ success: false, message: "Registration failed" });
+  }
+});
+
 
 // Start server
 const PORT = process.env.PORT || 3000;
