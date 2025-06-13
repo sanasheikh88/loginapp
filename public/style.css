@@ -1,0 +1,75 @@
+/* Reset default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #34344e);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login box styling */
+.login-box {
+  background: #2c2c3c;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #00ffd5;
+}
+
+/* Textbox styling */
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  background: #1f1f2f;
+  border: none;
+  border-radius: 8px;
+  color: #eee;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.login-box input:focus {
+  outline: 2px solid #00ffd5;
+}
+
+/* Button styling */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #00ffd5;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.login-box button:hover {
+  background: #00c9aa;
+}
+
+/* Message text */
+#message {
+  margin-top: 15px;
+  font-weight: bold;
+}
